@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang='pt-br'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
+  <link rel='stylesheet' href='./assets/css/style.css'>
+
+  <title> Five Night At Catty's </title>
+</head>
+
+<body>
+  <div id="screen"></div>
+
+  <div id="buttons">
+    <div class="camera-btn"> VVV CÂMERA VVV </div>
+    <div class="door-btn"> &lt; <br> &lt; <br> &lt; <br> &lt; <br> &lt; <br> &lt; </div>
+    <div class="window-btn"> &gt; <br> &gt; <br> &gt; <br> &gt; <br> &gt; <br> &gt; </div>
+    <div class="window-look-btn display-none"> LOOK </div>
+    <div class="door-look-btn display-none"> LOOK </div>
+  </div>
+
+  <div id="camera" class="display-none"> 
+    <div class="panel">
+      <button class="cam cam1"> CAMERA 1 </button>
+      <button class="cam cam2"> CAMERA 2 </button>
+    </div>
+    <div class="display"></div>
+  </div>
+
+  <script src='./assets/js/door.js'></script>
+  <script src='./assets/js/window.js'></script>
+  <script src='./assets/js/globalInfo.js'></script>
+  <script src='./assets/js/utils.js'></script>
+  <script src='./assets/js/buttons.js'></script>
+  <script src='./assets/js/camera.js'></script>
+  <script src='./assets/js/screen.js'></script>
+</body>
+
+</html>
