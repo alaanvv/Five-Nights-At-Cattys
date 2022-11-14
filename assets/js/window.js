@@ -23,6 +23,15 @@ function lookRight() {
 
 function lookWindow() {
   changeScreen('lookingWindow')
+
+  if (blackCat.is === 'window') {
+    if (blackCat.rage) {
+      blackCat.rage = false
+    }
+    if (blackCat.killer) {
+      blackCat.jumpScare()
+    }
+  }
 }
 function stopLookWindow() {
   changeScreen('window')

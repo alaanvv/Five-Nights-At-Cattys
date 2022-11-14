@@ -23,6 +23,15 @@ function lookLeft() {
 
 function lookDoor() {
   changeScreen('lookingDoor')
+  
+  if (whiteCat.is === 'door') {
+    if (whiteCat.rage) {
+      whiteCat.rage = false
+    }
+    if (whiteCat.killer) {
+      whiteCat.jumpScare()
+    }
+  }
 }
 function stopLookDoor() {
   changeScreen('door')

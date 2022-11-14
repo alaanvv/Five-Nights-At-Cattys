@@ -9,7 +9,22 @@ const anim = {
   rightToRoom:     ['rightToRoom 500ms', 250, 'room']
 }
 
-const url = {
+const urlBase = {
+  room: '../assets/img/room.png',
+
+  glitch: '../assets/img/glitch.gif',
+  cam1: '../assets/img/cam1.gif',
+  cam2: '../assets/img/cam2.gif',
+
+  door: '../assets/img/door.png',
+  lookingDoor: '../assets/img/lookingDoor.png',
+
+  window: '../assets/img/window.png',
+  lookingWindow: '../assets/img/lookingWindow.png',
+  
+  none: 'none'
+}
+let url = {
   room: '../assets/img/room.png',
 
   glitch: '../assets/img/glitch.gif',

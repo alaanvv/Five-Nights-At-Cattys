@@ -61,6 +61,9 @@ function closeCam() {
   setTimeout(e => {
     attButtons()
     screen.animation = 'none'
+
+    if (blackCat.instaKill) blackCat.jumpScare()
+    if (whiteCat.instaKill) whiteCat.jumpScare()
   }, anim.closeCam[1])
 }
 
