@@ -76,14 +76,14 @@ let url = {
 
 const audio = {
   surprise: new Audio('/assets/audio/surprise.mp4'),
-  jumpScare: new Audio('/assets/audio/jumpscare.mp4'),
+  jumpscare: new Audio('/assets/audio/jumpscare.mp4'),
   suspense: new Audio('/assets/audio/suspense.mp4')
 }
 audio.suspense.loop = true
 audio.suspense.volume = 0.1
 
 let lookingTo = 'room'
-const catsDelay = 1000
+const catsDelay = 3000
 const moveTime = 10000
 const waitToAttackTime = 15000
 const rushToAttackTime = 15000

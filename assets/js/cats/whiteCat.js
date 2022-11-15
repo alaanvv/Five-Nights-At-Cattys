@@ -9,7 +9,8 @@ const whiteCat = {
     this._is = value
 
     // Reset all cams
-    url.cam1, url.lookingDoor = urlBase.cam1, urlBase.lookingDoor
+    url.cam1 = urlBase.cam1
+    url.lookingDoor = urlBase.lookingDoor
     // Glitches
     camera.index = 0
 
@@ -35,7 +36,7 @@ const whiteCat = {
   rushingToAttack: false,
 
   start() {
-    this.moveInterval = setInterval(this.move, moveTime)
+    this.moveInterval = setInterval(e => { this.move() }, moveTime)
   },
   move() {
     if (this.waitingToAttack || this.readyToAttack || this.rushingToAttack) return
@@ -44,7 +45,7 @@ const whiteCat = {
     if (this.is === 'door') this.startCounter()
   },
   randomArea() {
-    this.areas[Math.floor(Math.random() * this.areas.length)]
+    return this.areas[Math.floor(Math.random() * this.areas.length)]
   },
   startCounter() {
     this.waitingToAttack = true
@@ -66,10 +67,10 @@ const whiteCat = {
     this.dom.style.animation = anim.jump
 
     this.dom.addEventListener('animationend', e => {
-      audio.jsAudio.play()
+      audio.jumpscare.play()
       this.dom.style.animation = anim.scare
     })
   }
 }
 
-setTimeout(whiteCat.start, catsDelay)
+setTimeout(e => { whiteCat.start() }, catsDelay)

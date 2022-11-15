@@ -9,7 +9,8 @@ const blackCat = {
     this._is = value
 
     // Reset all cams
-    url.cam2, url.lookingWindow = urlBase.cam2, urlBase.lookingWindow
+    url.cam2 = urlBase.cam2
+    url.lookingWindow = urlBase.lookingWindow
     // Glitches
     camera.index = 0
 
@@ -36,7 +37,7 @@ const blackCat = {
   rushingToAttack: false,
 
   start() {
-    this.moveInterval = setInterval(this.move, moveTime)
+    this.moveInterval = setInterval(e => { this.move() }, moveTime)
   },
   move() {
     if (this.waitingToAttack || this.readyToAttack || this.rushingToAttack) return
@@ -45,7 +46,7 @@ const blackCat = {
     if (this.is === 'window') this.startCounter()
   },
   randomArea() {
-    this.areas[Math.floor(Math.random() * this.areas.length)]
+    return this.areas[Math.floor(Math.random() * this.areas.length)]
   },
   startCounter() {
     this.waitingToAttack = true
@@ -67,10 +68,10 @@ const blackCat = {
     this.dom.style.animation = anim.jump
 
     this.dom.addEventListener('animationend', e => {
-      audio.jsAudio.play()
+      audio.jumpscare.play()
       this.dom.style.animation = anim.scare
     })
   }
 }
 
-setTimeout(blackCat.start, catsDelay)
+setTimeout(e => { blackCat.start() }, catsDelay)
