@@ -11,18 +11,32 @@
 </head>
 
 <body>
-  <div id="screen"></div>
-  <img src="./assets/img/black-cat-jumpscare.png" class="jumpscare black-cat-jumpscare display-none">
-  <img src="./assets/img/white-cat-jumpscare.png" class="jumpscare white-cat-jumpscare display-none">
+  <!-- MISC -->
+  <script src='./assets/js/global.js'></script>
 
+  <!-- SCREEN -->
+  <div id="screen"></div>
+  <script src='./assets/js/screen.js'></script>
+  <script src='./assets/js/door.js'></script>
+  <script src='./assets/js/window.js'></script>
+
+  <!-- CATS -->
+  <img src="./assets/img/jumpscare/black-cat-jumpscare.png" alt="Black cat" class="jumpscare black-cat-jumpscare display-none">
+  <img src="./assets/img/jumpscare/white-cat-jumpscare.png" alt="White cat" class="jumpscare white-cat-jumpscare display-none">
+  <script src='./assets/js/cats/whiteCat.js'></script>
+  <script src='./assets/js/cats/blackCat.js'></script>
+
+  <!-- BUTTONS -->
   <div id="buttons">
     <div class="camera-btn"> VVV CÂMERA VVV </div>
-    <div class="door-btn"> &lt; <br> &lt; <br> &lt; <br> &lt; <br> &lt; <br> &lt; </div>
-    <div class="window-btn"> &gt; <br> &gt; <br> &gt; <br> &gt; <br> &gt; <br> &gt; </div>
+    <div class="left-btn"> &lt; <br> &lt; <br> &lt; <br> &lt; <br> &lt; <br> &lt; </div>
+    <div class="right-btn"> &gt; <br> &gt; <br> &gt; <br> &gt; <br> &gt; <br> &gt; </div>
     <div class="window-look-btn display-none"> LOOK </div>
     <div class="door-look-btn display-none"> LOOK </div>
   </div>
+  <script src='./assets/js/buttons.js'></script>
 
+  <!-- CAMERA -->
   <div id="camera" class="display-none"> 
     <div class="panel">
       <button class="cam cam1"> CAMERA 1 </button>
@@ -30,16 +44,7 @@
     </div>
     <div class="display"></div>
   </div>
-
-  <script src='./assets/js/door.js'></script>
-  <script src='./assets/js/window.js'></script>
-  <script src='./assets/js/globalInfo.js'></script>
-  <script src='./assets/js/utils.js'></script>
-  <script src='./assets/js/buttons.js'></script>
   <script src='./assets/js/camera.js'></script>
-  <script src='./assets/js/screen.js'></script>
-  <script src='./assets/js/whiteCat.js'></script>
-  <script src='./assets/js/blackCat.js'></script>
 </body>
 
 </html>

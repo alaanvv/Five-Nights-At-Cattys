@@ -1,53 +1,45 @@
+// DOM
 const cameraBtn = document.querySelector('.camera-btn')
-const doorBtn = document.querySelector('.door-btn')
-const doorLookBtn = document.querySelector('.door-look-btn')
-const windowBtn = document.querySelector('.window-btn')
+const rightBtn = document.querySelector('.right-btn')
+const leftBtn = document.querySelector('.left-btn')
 const windowLookBtn = document.querySelector('.window-look-btn')
+const doorLookBtn = document.querySelector('.door-look-btn')
 
 // FUNCTION
-function noButton() {
-  inv(cameraBtn)
-  inv(doorBtn)
-  inv(windowBtn)
-  inv(windowLookBtn)
-  inv(doorLookBtn)
-}
-function allButtons() {
-  vis(cameraBtn)
-  vis(doorBtn)
-  vis(windowBtn)
-  vis(windowLookBtn)
-  vis(doorLookBtn)
-}
+function noButton() { inv([cameraBtn, rightBtn, leftBtn, windowLookBtn, doorLookBtn]) }
+function allButtons() { vis([cameraBtn, rightBtn, leftBtn, windowLookBtn, doorLookBtn]) }
 function attButtons() {
   if (camera.opened) {
     noButton()
     vis(cameraBtn)
+
     return
   }
+
   if (lookingTo === 'room') {
     allButtons()
-    inv(windowLookBtn)
-    inv(doorLookBtn)
+    inv([windowLookBtn, doorLookBtn])
 
     return
   }
   else if (lookingTo === 'door') {
     noButton()
-    vis(windowBtn)
-    vis(doorLookBtn)
+    vis([rightBtn, doorLookBtn])
+
+    return
   }
   else if (lookingTo === 'window') {
     noButton()
-    vis(doorBtn)
-    vis(windowLookBtn)
+    vis([leftBtn, windowLookBtn])
+    
+    return
   }
 }
 
 // EVENT LISTENER
 cameraBtn.addEventListener('mouseenter', e => { switchCam() })
-doorBtn.addEventListener('mouseenter', e => { lookLeft() })
-windowBtn.addEventListener('mouseenter', e => { lookRight() })
+leftBtn.addEventListener('mouseenter', e => { lookLeft() })
+rightBtn.addEventListener('mouseenter', e => { lookRight() })
 windowLookBtn.addEventListener('mousedown', e => { lookWindow() })
 windowLookBtn.addEventListener('mouseup', e => { stopLookWindow() })
 windowLookBtn.addEventListener('mouseout', e => { stopLookWindow() })

@@ -11,6 +11,7 @@ body {
   font-family: 'Courier New', Courier, monospace;
 
   user-select: none;
+  -webkit-user-select: none;
   overflow: hidden;
 }
 
@@ -22,7 +23,7 @@ body {
   height: 100vh;
 
   background-size: 100vw 100vh;
-  background-image: url('../img/room.png');
+  background-image: url('/assets/img/room/room.png'); 
 
   animation: breath 10s ease-in-out alternate infinite;
 }
@@ -84,6 +85,12 @@ body {
   background-size: 100% 100%;
 }
 
+.jumpscare {
+  left: 20vw;
+  height: 100%;
+  position: absolute;
+}
+
 /* --- */
 
 #buttons > * {
@@ -110,13 +117,13 @@ body {
   padding: 3px;
 }
 
-.door-btn {
+.left-btn {
   width: 30px;
   left: 1vw;
   bottom: 45vh;
 }
 
-.window-btn {
+.right-btn {
   width: 30px;
   right: 1vw;
   bottom: 45vh;
@@ -140,54 +147,48 @@ body {
   display: none !important;
 }
 
-.jumpscare {
-  left: 20vw;
-  height: 100%;
-  position: absolute;
-}
-
-/* --- */
+/* --- KEY FRAMES --- */
 
 @keyframes openCam {
-  0% { background-image: url('../img/room.png'); }
-  25% { background-image: url('../img/open1.png'); }
-  50% { background-image: url('../img/open2.png'); }
-  75% { background-image: url('../img/open3.png'); }
-  100% { background-image: url('../img/open3.png'); }
+  0% { background-image: url('/assets/img/room/room.png'); } 
+  25% { background-image: url('/assets/img/cam/open1.png'); }
+  50% { background-image: url('/assets/img/cam/open2.png'); }
+  75% { background-image: url('/assets/img/cam/open3.png'); }
+  100% { background-image: url('/assets/img/cam/open3.png'); }
 }
 @keyframes closeCam {
   0% { background-image: none; }
-  20% { background-image: url('../img/open3.png'); }
-  40% { background-image: url('../img/open2.png'); }
-  60% { background-image: url('../img/open1.png'); }
-  80% { background-image: url('../img/room.png'); }
-  100% { background-image: url('../img/room.png'); }
+  20% { background-image: url('/assets/img/cam/open3.png'); }
+  40% { background-image: url('/assets/img/cam/open2.png'); }
+  60% { background-image: url('/assets/img/cam/open1.png'); }
+  80% { background-image: url('/assets/img/room/room.png'); } 
+  100% { background-image: url('/assets/img/room/room.png'); } 
 }
 
 @keyframes left {
-  0% { background-image: url('../img/room.png'); }
-  33% { background-image: url('../img/left1.png'); }
-  66% { background-image: url('../img/door.png'); }
-  100% { background-image: url('../img/door.png'); }
+  0% { background-image: url('/assets/img/room/room.png'); } 
+  33% { background-image: url('/assets/img/door/left1.png'); }
+  66% { background-image: url('/assets/img/door/door.png'); }
+  100% { background-image: url('/assets/img/door/door.png'); }
 }
 @keyframes leftToRoom {
-  0% { background-image: url('../img/door.png'); }
-  33% { background-image: url('../img/left1.png'); }
-  66% { background-image: url('../img/room.png'); }
-  100% { background-image: url('../img/room.png'); }
+  0% { background-image: url('/assets/img/door/door.png'); }
+  33% { background-image: url('/assets/img/door/left1.png'); }
+  66% { background-image: url('/assets/img/room/room.png'); } 
+  100% { background-image: url('/assets/img/room/room.png'); } 
 }
 
 @keyframes right {
-  0% { background-image: url('../img/room.png'); }
-  33% { background-image: url('../img/right1.png'); }
-  66% { background-image: url('../img/window.png'); }
-  100% { background-image: url('../img/window.png'); }
+  0% { background-image: url('/assets/img/room/room.png'); } 
+  33% { background-image: url('/assets/img/window/right1.png'); }
+  66% { background-image: url('/assets/img/window/window.png'); }
+  100% { background-image: url('/assets/img/window/window.png'); }
 }
 @keyframes rightToRoom {
-  0% { background-image: url('../img/window.png'); }
-  33% { background-image: url('../img/right1.png'); }
-  66% { background-image: url('../img/room.png'); }
-  100% { background-image: url('../img/room.png'); }
+  0% { background-image: url('/assets/img/window/window.png'); }
+  33% { background-image: url('/assets/img/window/right1.png'); }
+  66% { background-image: url('/assets/img/room/room.png'); } 
+  100% { background-image: url('/assets/img/room/room.png'); } 
 }
 
 @keyframes breath {

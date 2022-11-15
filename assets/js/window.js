@@ -1,23 +1,14 @@
 // FUNCTION
 function lookRight() {
+  noButton()
+
   if (lookingTo === 'door') {
-    noButton()
-    animation(anim.leftToRoom[0], anim.leftToRoom[2])
-
-    setTimeout(e => {
-      lookingTo = 'room'
-      attButtons()
-    }, anim.leftToRoom[1])
+    animation(anim.leftToRoom, e => { attButtons(); changeScreen('room') })
+    lookingTo = 'room'
   }
-  
-  if (lookingTo === 'room') {
-    noButton()
-    animation(anim.right[0], anim.right[2])
-
-    setTimeout(e => {
-      lookingTo = 'window'
-      attButtons()
-    }, anim.right[1])
+  else if (lookingTo === 'room') {
+    animation(anim.right, e => { attButtons(); changeScreen('window') })
+    lookingTo = 'window'
   }
 }
 
@@ -25,14 +16,8 @@ function lookWindow() {
   changeScreen('lookingWindow')
 
   if (blackCat.is === 'window') {
-    if (blackCat.rage) {
-      blackCat.rage = false
-    }
-    if (blackCat.killer) {
-      blackCat.jumpScare()
-    }
+    if (blackCat.waitingToAttack) blackCat.waitingToAttack = false
+    if (blackCat.readyToAttack) blackCat.jumpScare()
   }
 }
-function stopLookWindow() {
-  changeScreen('window')
-}
+function stopLookWindow() { changeScreen('window') }
