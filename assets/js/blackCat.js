@@ -70,7 +70,7 @@ const blackCat = {
           this.instaKill = true
         }, 30000)
       }
-    }, 20000)
+    }, 10000)
   },
 
   jumpScare() {
