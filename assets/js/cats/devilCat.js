@@ -47,11 +47,12 @@ const devilCat = {
   set attackCounter(value) {
     this._attackCounter = value
 
-    if (value <= 30) this.is = 'vent3'
-    else if (value <= 80) this.is = 'vent2'
-    else if (value <= 150) this.is = 'vent1'
+    if (value <= 10 - time) this.is = 'vent3'
+    else if (value <= 25 - time) this.is = 'vent2'
+    else if (value <= 50 - time) this.is = 'vent1'
     else this.is = 'room'
   },
+  
   get attackCounter() { return this._attackCounter } ,
 
   start() {

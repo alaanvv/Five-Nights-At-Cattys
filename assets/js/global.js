@@ -111,13 +111,13 @@ audio.suspense.loop = true
 audio.suspense.volume = 0.1
 
 let lookingTo = 'room'
-const blackCatDelay = 15000
-const whiteCatDelay = 30000
-const devilCatDelay = 50000
-const devilCatAttackDelay = 40000
-const moveTime = 15000
-const waitToAttackTime = 20000
-const rushToAttackTime = 10000
+const blackCatDelay = 10000
+const whiteCatDelay = 20000
+const devilCatDelay = 40000
+const devilCatAttackDelay = 50000
+const moveTime = 12000
+const waitToAttackTime = 15000
+const rushToAttackTime = 5000
 const instaAttackTime = 10000
 
 // FUNCTION

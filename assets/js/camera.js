@@ -56,7 +56,7 @@ function closeCam() {
   camera.opened = false
   animation(anim.closeCam, e => {
     attButtons()
-    screen.background = 'room'
+    changeScreen('room')
     screen.animation = 'none'
 
     if (blackCat.rushingToAttack) blackCat.jumpScare()
