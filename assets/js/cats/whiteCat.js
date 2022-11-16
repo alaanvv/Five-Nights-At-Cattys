@@ -11,8 +11,9 @@ const whiteCat = {
     // Reset all cams
     url.cam1 = urlBase.cam1
     url.lookingDoor = urlBase.lookingDoor
-    // Glitches
-    camera.index = 0
+    // Glitches    
+    if (camera.index === 1) camera.glitch()
+
 
     switch (value) {
       case 'cam1-window':
@@ -25,6 +26,7 @@ const whiteCat = {
 
       case 'door':
         url.lookingDoor = url.lookingDoorWhiteCat
+        url.cam1 = url.cam1WhiteCatOnDoor
         break
 
       default: break
@@ -57,10 +59,23 @@ const whiteCat = {
       clearInterval(this.moveInterval)
       this.readyToAttack = true
 
-      setTimeout(e => { this.rushingToAttack = true }, rushToAttackTime)
+      setTimeout(e => { 
+        this.rushingToAttack = true
+        setTimeout(e => { this.jumpScare() }, instaAttackTime)
+      }, rushToAttackTime)
     }, waitToAttackTime)
   },
   jumpScare() {
+    if (camera.opened) {
+      camera.opened = false
+      inv(camera.containerDOM)
+      noButton()
+      animation(anim.closeCam, e => {
+        screen.background = 'room'
+        this.jumpScare()
+      })
+      return
+    }
     noButton()
     audio.surprise.play()
     vis(this.dom)
@@ -73,4 +88,4 @@ const whiteCat = {
   }
 }
 
-setTimeout(e => { whiteCat.start() }, catsDelay)
+setTimeout(e => { whiteCat.start() }, whiteCatDelay)

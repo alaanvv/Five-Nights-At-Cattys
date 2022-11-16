@@ -19,11 +19,24 @@ const urlBase = {
   cam1: '/assets/img/cam1/cam1.gif',
   cam1WhiteCatOnWindow: '/assets/img/cam1/cam1-whiteCatOnWindow.gif',
   cam1WhiteCatOnCam: '/assets/img/cam1/cam1-whiteCatOnCam.gif',
+  cam1WhiteCatOnDoor: '/assets/img/cam1/cam1-whiteCatOnDoor.gif',
   
   // CAM2
   cam2: '/assets/img/cam2/cam2.gif',
   cam2blackCatOnWindow: '/assets/img/cam2/cam2-blackCatOnWindow.gif',
   cam2BlackCatOnFloor: '/assets/img/cam2/cam2-blackCatOnFloor.gif',
+  
+  // CAM3
+  cam3: '/assets/img/vent/vent1.gif',
+  cam3Cat: '/assets/img/vent/vent1Cat.gif',
+  
+  // CAM4
+  cam4: '/assets/img/vent/vent2.gif',
+  cam4Cat: '/assets/img/vent/vent2Cat.gif',
+  
+  // CAM5
+  cam5: '/assets/img/vent/vent3.gif',
+  cam5Cat: '/assets/img/vent/vent3Cat.gif',
   
   // DOOR
   door: '/assets/img/door/door.png',
@@ -50,11 +63,24 @@ let url = {
   cam1: '/assets/img/cam1/cam1.gif',
   cam1WhiteCatOnWindow: '/assets/img/cam1/cam1-whiteCatOnWindow.gif',
   cam1WhiteCatOnCam: '/assets/img/cam1/cam1-whiteCatOnCam.gif',
+  cam1WhiteCatOnDoor: '/assets/img/cam1/cam1-whiteCatOnDoor.gif',
   
   // CAM2
   cam2: '/assets/img/cam2/cam2.gif',
   cam2blackCatOnWindow: '/assets/img/cam2/cam2-blackCatOnWindow.gif',
   cam2BlackCatOnFloor: '/assets/img/cam2/cam2-blackCatOnFloor.gif',
+  
+  // CAM3
+  cam3: '/assets/img/vent/vent1.gif',
+  cam3Cat: '/assets/img/vent/vent1Cat.gif',
+  
+  // CAM4
+  cam4: '/assets/img/vent/vent2.gif',
+  cam4Cat: '/assets/img/vent/vent2Cat.gif',
+  
+  // CAM5
+  cam5: '/assets/img/vent/vent3.gif',
+  cam5Cat: '/assets/img/vent/vent3Cat.gif',
   
   // DOOR
   door: '/assets/img/door/door.png',
@@ -63,6 +89,7 @@ let url = {
 
   // ROOM
   room: '/assets/img/room/room.png',
+  roomCat: '/assets/img/room/roomCat.png',
   
   // WINDOW
   window: '/assets/img/window/window.png',
@@ -77,16 +104,21 @@ let url = {
 const audio = {
   surprise: new Audio('/assets/audio/surprise.mp4'),
   jumpscare: new Audio('/assets/audio/jumpscare.mp4'),
-  suspense: new Audio('/assets/audio/suspense.mp4')
+  jumpscareVeryScary: new Audio('/assets/audio/jumpscareVeryScary.mp4'),
+  suspense: new Audio('/assets/audio/suspense.mp4'),
 }
 audio.suspense.loop = true
 audio.suspense.volume = 0.1
 
 let lookingTo = 'room'
-const catsDelay = 3000
-const moveTime = 10000
-const waitToAttackTime = 15000
-const rushToAttackTime = 15000
+const blackCatDelay = 15000
+const whiteCatDelay = 30000
+const devilCatDelay = 50000
+const devilCatAttackDelay = 40000
+const moveTime = 15000
+const waitToAttackTime = 20000
+const rushToAttackTime = 10000
+const instaAttackTime = 10000
 
 // FUNCTION
 function inv(element) {

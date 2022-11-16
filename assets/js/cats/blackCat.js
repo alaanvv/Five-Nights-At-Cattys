@@ -12,7 +12,7 @@ const blackCat = {
     url.cam2 = urlBase.cam2
     url.lookingWindow = urlBase.lookingWindow
     // Glitches
-    camera.index = 0
+    if (camera.index === 2) camera.glitch()
 
     switch (value) {
       case 'cam2-window':
@@ -58,10 +58,23 @@ const blackCat = {
       clearInterval(this.moveInterval)
       this.readyToAttack = true
 
-      setTimeout(e => { this.rushingToAttack = true }, rushToAttackTime)
+      setTimeout(e => { 
+        this.rushingToAttack = true 
+        setTimeout(e => { this.jumpScare() }, instaAttackTime)
+      }, rushToAttackTime)
     }, waitToAttackTime)
   },
   jumpScare() {
+    if (camera.opened) {
+      camera.opened = false
+      inv(camera.containerDOM)
+      noButton()
+      animation(anim.closeCam, e => {
+        screen.background = 'room'
+        this.jumpScare()
+      })
+      return
+    }
     noButton()
     audio.surprise.play()
     vis(this.dom)
@@ -74,4 +87,4 @@ const blackCat = {
   }
 }
 
-setTimeout(e => { blackCat.start() }, catsDelay)
+setTimeout(e => { blackCat.start() }, blackCatDelay)
